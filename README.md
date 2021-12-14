@@ -6,7 +6,7 @@ This script creates audio segments (in WAV format) for each segment of a TS file
 
 1 °) Install the following dependencies:
 
-- jq: brew install jq
+- jq: ```brew install jq```
 - ffmpeg (and ffprobe)
 - scte35-threefive: https://github.com/futzu/scte35-threefive
 
