@@ -10,9 +10,6 @@ lastPTS=$(echo "scale=6;$lastPTS/90000" | bc)
 #Collection of pts_time of all deduplicated time_signal type markers
 allUniquePTSTime=$(python3 -c "import threefive; threefive.decode('${file}')" | jq --raw-output '.command | select(.command_type==6) | .pts_time' | jq -s 'unique | .[]')
 
-#Collection of descriptor content of all deduplicated markers
-#allUniqueSegmentationUpid=$(python3 -c "import threefive; threefive.decode('${file}')" | jq '.descriptors[]' | jq -s 'unique')
-
 #Build Array with all TimeCode
 #first item
 allTimeCode[${#allTimeCode[@]}]=$firstPTS
